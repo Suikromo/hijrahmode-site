@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kebijakan Privasi Hijrah Mode / Privacy Policy</title>
+<meta name="description" content="Kebijakan privasi aplikasi Android Hijrah Mode. Privacy policy for the Hijrah Mode Android app.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="./">🌙 Hijrah Mode</a>
+  <h1>Kebijakan Privasi<br>Privacy Policy</h1>
+  <p class="muted">Berlaku sejak / Effective: 7 Oktober 2026 (October 7, 2026)</p>
+  <nav class="lang">
+    <a href="#id">Bahasa Indonesia</a>
+    <a href="#en">English</a>
+  </nav>
+</header>
+
+<!-- ===================== BAHASA INDONESIA ===================== -->
+<section id="id" lang="id">
+<h2>Bahasa Indonesia</h2>
+
+<p>Kebijakan ini menjelaskan bagaimana aplikasi Android <strong>Hijrah Mode</strong> (<code>com.hijrahmode.app</code>) memperlakukan data Anda. Hijrah Mode dikembangkan oleh perorangan, dr. Bambang Hendra S, Kotamobagu, Indonesia.</p>
+
+<div class="summary">
+<strong>Ringkasnya</strong>
+<ul>
+  <li>Kami <strong>tidak mengumpulkan, mengirim, menjual, atau membagikan</strong> data pribadi apa pun.</li>
+  <li>Tidak ada akun, iklan, analytics, maupun server. Aplikasi ini <strong>tidak memiliki izin akses internet</strong>.</li>
+  <li>Semua yang dicatat aplikasi disimpan di HP Anda saja dan terhapus saat aplikasi dihapus.</li>
+</ul>
+</div>
+
+<h3>1. Data yang disimpan di HP Anda</h3>
+<p>Agar aplikasi berfungsi, data berikut disimpan di penyimpanan internal HP Anda dan tidak pernah dikirim ke luar HP:</p>
+<ul>
+  <li>Pengaturan: daftar aplikasi yang Anda pilih untuk diberi gerbang, mode gerbang, target harian, waktu bebas, ukuran huruf, bahasa terjemah, transliterasi, tema, dan Mode tenang.</li>
+  <li>Progres belajar: posisi bacaan ayat, tingkat Jalur Hijaiyah, dan jumlah khatam.</li>
+  <li>Statistik lokal: jumlah ayat dan kartu yang dibaca, gerbang yang selesai, jumlah tiap jalan keluar yang dipakai (termasuk kategori alasan "Buka untuk kerja" yang Anda pilih), hari aktif, Taman Hijrah, dan streak.</li>
+  <li>Mode berhalangan: status aktif dan tanggal berakhir yang Anda isi sendiri.</li>
+  <li>Khusus versi uji tertutup: kelompok eksperimen (A atau B) yang diundi di HP Anda.</li>
+</ul>
+<p>Hijrah Mode tidak menyimpan riwayat aplikasi yang Anda buka. Anda dapat menghapus seluruh data ini kapan saja lewat Pengaturan Android › Aplikasi › Hijrah Mode › Penyimpanan › Hapus data, atau dengan meng-uninstall aplikasi.</p>
+
+<h3>2. Layanan Aksesibilitas (AccessibilityService)</h3>
+<div class="card">
+<p><strong>Untuk apa:</strong> Hijrah Mode memakai API Layanan Aksesibilitas Android untuk mengetahui <em>kapan</em> Anda membuka aplikasi yang Anda pilih sendiri (misalnya Instagram), lalu menampilkan satu ayat Al-Qur'an atau kartu huruf hijaiyah sebelum aplikasi itu terbuka. Inilah fungsi utama aplikasi.</p>
+<p><strong>Apa yang dibaca:</strong> hanya <strong>nama paket</strong> aplikasi yang sedang tampil di layar (contoh: <code>com.instagram.android</code>), dari peristiwa perubahan jendela (<code>TYPE_WINDOW_STATE_CHANGED</code>).</p>
+<p><strong>Apa yang tidak dibaca:</strong> isi layar, teks yang Anda ketik, kata sandi, pesan, kontak, foto, atau riwayat penelusuran. Layanan dikonfigurasi dengan <code>canRetrieveWindowContent="false"</code>, sehingga secara teknis tidak dapat membaca isi layar.</p>
+<p><strong>Ke mana datanya:</strong> nama paket hanya dibandingkan sesaat dengan daftar pilihan Anda di dalam HP. Nama paket tidak disimpan sebagai riwayat dan tidak dikirim ke mana pun.</p>
+<p><strong>Persetujuan:</strong> sebelum membuka Pengaturan Aksesibilitas, aplikasi menampilkan penjelasan ini dan meminta persetujuan Anda dengan tombol yang jelas. Anda dapat menolak dan tetap memakai aplikasi, serta mematikan layanan ini kapan saja di Pengaturan Android › Aksesibilitas.</p>
+<p>Hijrah Mode bukan alat bantu khusus penyandang disabilitas.</p>
+</div>
+
+<h3>3. Izin lain dan kegunaannya</h3>
+<table>
+  <tr><th>Izin</th><th>Kegunaan</th></tr>
+  <tr><td>Akses penggunaan (<code>PACKAGE_USAGE_STATS</code>)</td><td>Cara cadangan untuk mengetahui aplikasi yang sedang dibuka bila Layanan Aksesibilitas tidak aktif. Hanya nama paket aplikasi terdepan yang dibaca, di dalam HP.</td></tr>
+  <tr><td>Tampil di atas aplikasi lain (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Menampilkan layar ayat di atas aplikasi yang Anda pilih, saat cara cadangan dipakai.</td></tr>
+  <tr><td>Layanan latar depan (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>)</td><td>Menjalankan cara cadangan dengan notifikasi permanen "Hijrah Mode aktif".</td></tr>
+  <tr><td>Notifikasi (<code>POST_NOTIFICATIONS</code>)</td><td>Memberi tahu bila Hijrah Mode berhenti bekerja, dan notifikasi layanan di atas.</td></tr>
+  <tr><td>Daftar aplikasi terpasang (kueri peluncur)</td><td>Menampilkan nama dan ikon aplikasi di HP Anda agar Anda dapat memilih mana yang diberi gerbang. Daftar ini tidak disimpan dan tidak dikirim.</td></tr>
+  <tr><td>Pemeriksaan harian (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Diperlukan oleh pustaka Android WorkManager untuk menjalankan cek kesehatan sekali sehari. <code>ACCESS_NETWORK_STATE</code> hanya membaca status jaringan dan tidak memberi akses internet.</td></tr>
+</table>
+
+<h3>4. Berbagi</h3>
+<p>Fitur "Bagikan ringkasan" dan kartu perayaan membuat teks atau gambar di HP Anda, lalu membuka menu berbagi Android. Isinya hanya dikirim bila Anda sendiri memilih aplikasi tujuan dan mengirimnya.</p>
+
+<h3>5. Pihak ketiga</h3>
+<p>Hijrah Mode tidak memuat SDK iklan, analytics, pelacak, atau layanan pihak ketiga yang mengirim data. Teks Al-Qur'an bersumber dari Tanzil Project (tanzil.net) dan disertakan di dalam aplikasi, tanpa diunduh saat dipakai.</p>
+
+<h3>6. Anak-anak</h3>
+<p>Hijrah Mode tidak ditujukan untuk anak di bawah 13 tahun dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.</p>
+
+<h3>7. Keamanan</h3>
+<p>Karena data tidak pernah meninggalkan HP Anda, keamanannya mengikuti perlindungan HP Anda sendiri (kunci layar dan enkripsi bawaan Android).</p>
+
+<h3>8. Perubahan kebijakan</h3>
+<p>Bila fitur baru mengubah cara data diperlakukan (misalnya fitur yang memerlukan internet), kebijakan ini akan diperbarui terlebih dahulu dan tanggal berlakunya diubah. Perubahan penting juga diberitahukan di dalam aplikasi.</p>
+
+<h3>9. Kontak</h3>
+<p>Pertanyaan tentang privasi: <a href="mailto:hijrahmode.app@gmail.com">hijrahmode.app@gmail.com</a></p>
+</section>
+
+<!-- ===================== ENGLISH ===================== -->
+<section id="en" lang="en">
+<h2>English</h2>
+
+<p>This policy explains how the <strong>Hijrah Mode</strong> Android app (<code>com.hijrahmode.app</code>) treats your data. Hijrah Mode is developed by an individual, dr. Bambang Hendra S, Kotamobagu, Indonesia.</p>
+
+<div class="summary">
+<strong>In short</strong>
+<ul>
+  <li>We <strong>do not collect, transmit, sell, or share</strong> any personal data.</li>
+  <li>No accounts, ads, analytics, or servers. The app <strong>does not have the internet permission</strong>.</li>
+  <li>Everything the app records stays on your phone and is deleted when you uninstall the app.</li>
+</ul>
+</div>
+
+<h3>1. Data stored on your phone</h3>
+<p>To work, the app keeps the following in your phone's internal storage. It never leaves your phone:</p>
+<ul>
+  <li>Settings: the apps you chose to gate, gate mode, daily target, free window, font size, translation language, transliteration, theme, and Quiet mode.</li>
+  <li>Learning progress: your reading position, Hijaiyah level, and number of completed readings (khatam).</li>
+  <li>Local statistics: verses and cards read, gates completed, how often each exit was used (including the "Open for work" reason category you picked), active days, Hijrah Garden, and streak.</li>
+  <li>Excused mode: whether it is on and the end date you entered.</li>
+  <li>Closed-testing builds only: the experiment group (A or B), assigned randomly on your phone.</li>
+</ul>
+<p>Hijrah Mode does not keep a history of the apps you open. You can delete all of this data at any time via Android Settings › Apps › Hijrah Mode › Storage › Clear data, or by uninstalling the app.</p>
+
+<h3>2. Accessibility Service (AccessibilityService API)</h3>
+<div class="card">
+<p><strong>Why:</strong> Hijrah Mode uses the Android Accessibility Service API to know <em>when</em> you open an app you selected yourself (for example Instagram), so it can show one Quran verse or one Arabic-letter card before that app opens. This is the core function of the app.</p>
+<p><strong>What is read:</strong> only the <strong>package name</strong> of the app currently on screen (for example <code>com.instagram.android</code>), from window-change events (<code>TYPE_WINDOW_STATE_CHANGED</code>).</p>
+<p><strong>What is not read:</strong> screen content, text you type, passwords, messages, contacts, photos, or browsing history. The service is configured with <code>canRetrieveWindowContent="false"</code>, so it technically cannot read screen content.</p>
+<p><strong>Where it goes:</strong> the package name is only compared, on your phone, with your list of selected apps. It is not stored as a history and is not sent anywhere.</p>
+<p><strong>Consent:</strong> before opening Accessibility settings, the app shows this explanation in the app and asks for your consent with a clear button. You can decline and still use the app, and you can turn the service off at any time in Android Settings › Accessibility.</p>
+<p>Hijrah Mode is not an accessibility tool for people with disabilities.</p>
+</div>
+
+<h3>3. Other permissions and why</h3>
+<table>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td>Usage access (<code>PACKAGE_USAGE_STATS</code>)</td><td>Backup method to know which app is open when the Accessibility Service is off. Only the package name of the foreground app is read, on your phone.</td></tr>
+  <tr><td>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Shows the verse screen on top of the app you selected when the backup method is used.</td></tr>
+  <tr><td>Foreground service (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>)</td><td>Runs the backup method with a permanent "Hijrah Mode is on" notification.</td></tr>
+  <tr><td>Notifications (<code>POST_NOTIFICATIONS</code>)</td><td>Tells you if Hijrah Mode stops working, plus the service notification above.</td></tr>
+  <tr><td>Installed apps (launcher query)</td><td>Shows the names and icons of apps on your phone so you can choose which ones to gate. The list is not stored or sent.</td></tr>
+  <tr><td>Daily check (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Required by the Android WorkManager library to run a once-a-day health check. <code>ACCESS_NETWORK_STATE</code> only reads network status and gives no internet access.</td></tr>
+</table>
+
+<h3>4. Sharing</h3>
+<p>"Share summary" and the celebration card create text or an image on your phone and open the Android share menu. Nothing is sent unless you pick a destination app and send it yourself.</p>
+
+<h3>5. Third parties</h3>
+<p>Hijrah Mode contains no advertising, analytics, tracking, or other third-party SDKs that transmit data. The Quran text comes from the Tanzil Project (tanzil.net) and is bundled inside the app, not downloaded during use.</p>
+
+<h3>6. Children</h3>
+<p>Hijrah Mode is not directed to children under 13 and collects no data from anyone, including children.</p>
+
+<h3>7. Security</h3>
+<p>Because data never leaves your phone, it is protected by your phone's own security (screen lock and Android's built-in encryption).</p>
+
+<h3>8. Changes</h3>
+<p>If a new feature changes how data is handled (for example a feature that needs the internet), this policy will be updated first and the effective date changed. Important changes will also be announced in the app.</p>
+
+<h3>9. Contact</h3>
+<p>Privacy questions: <a href="mailto:hijrahmode.app@gmail.com">hijrahmode.app@gmail.com</a></p>
+</section>
+
+<footer class="muted">© 2026 Hijrah Mode</footer>
+</main>
+</body>
+</html>
