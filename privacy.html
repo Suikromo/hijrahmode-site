@@ -12,7 +12,7 @@
 <header>
   <a class="brand" href="./">🌙 Ayat Dulu · Ayah First</a>
   <h1>Kebijakan Privasi<br>Privacy Policy</h1>
-  <p class="muted">Berlaku sejak / Effective: 29 Oktober 2026 (October 29, 2026)</p>
+  <p class="muted">Berlaku sejak / Effective: 21 November 2026 (November 21, 2026); versi pertama 29 Oktober 2026</p>
   <nav class="lang">
     <a href="#id">Bahasa Indonesia</a>
     <a href="#en">English</a>
@@ -41,6 +41,7 @@
   <li>Progres belajar: posisi bacaan ayat, tingkat Jalur Hijaiyah, dan jumlah khatam.</li>
   <li>Statistik lokal: jumlah ayat dan kartu yang dibaca, gerbang yang selesai, jumlah tiap jalan keluar yang dipakai, hari aktif, Taman Hijrah, dan streak.</li>
   <li>Mode terjemah saja: status aktif dan tanggal berakhir yang Anda isi sendiri.</li>
+  <li>Ibadah: lokasi untuk jadwal shalat (nama kota yang Anda pilih, atau koordinat kasar dari GPS), pilihan suara adzan dan pengingat, catatan shalat 5 waktu, status puasa, hitungan tasbih, dan penanda bacaan Al-Qur'an.</li>
   <li>Catatan gerbang hari ini untuk layar Bantuan: <em>jumlah</em> gerbang yang tampil dan yang dilewati per alasan (waktu bebas, tempat tidak layak), jam kejadian terakhir, dan jam layanan terakhir tersambung. Tanpa nama aplikasi; hitungan direset setiap hari.</li>
 </ul>
 <p><strong>Cadangan data (opsional):</strong> bila Anda mengetuk Pengaturan › Simpan cadangan, data di atas (kecuali catatan gerbang harian) disalin ke satu file JSON di tempat yang <em>Anda pilih sendiri</em> lewat pemilih file Android, misalnya folder Download atau Google Drive. Aplikasi tidak mengirim file itu ke mana pun; bila Anda memilih layanan awan, file itu tunduk pada kebijakan layanan tersebut. File hanya dibaca kembali saat Anda memilih Pulihkan dari cadangan.</p>
@@ -62,9 +63,13 @@
   <tr><td>Akses penggunaan (<code>PACKAGE_USAGE_STATS</code>)</td><td>Cara cadangan untuk mengetahui aplikasi yang sedang dibuka bila Layanan Aksesibilitas tidak aktif. Hanya nama paket aplikasi terdepan yang dibaca, di dalam HP.</td></tr>
   <tr><td>Tampil di atas aplikasi lain (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Menampilkan layar ayat di atas aplikasi yang Anda pilih, saat cara cadangan dipakai.</td></tr>
   <tr><td>Layanan latar depan (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>)</td><td>Menjalankan cara cadangan dengan notifikasi permanen "Ayat Dulu aktif".</td></tr>
-  <tr><td>Notifikasi (<code>POST_NOTIFICATIONS</code>)</td><td>Memberi tahu bila Ayat Dulu berhenti bekerja, dan notifikasi layanan di atas.</td></tr>
+  <tr><td>Notifikasi (<code>POST_NOTIFICATIONS</code>)</td><td>Memberi tahu bila Ayat Dulu berhenti bekerja, notifikasi layanan di atas, adzan dan pengingat shalat, serta notifikasi ayat harian bila Anda menyalakannya. Semua dibuat di dalam HP.</td></tr>
+  <tr><td>Lokasi perkiraan (<code>ACCESS_COARSE_LOCATION</code>)</td><td>Opsional. Menghitung jadwal shalat dan arah kiblat dari posisi kasar Anda, hanya saat aplikasi dipakai (tanpa lokasi latar). Dihitung di dalam HP, tidak dikirim. Anda bisa memilih kota secara manual sebagai gantinya.</td></tr>
+  <tr><td>Alarm tepat waktu (<code>SCHEDULE_EXACT_ALARM</code>)</td><td>Membunyikan adzan dan pengingat tepat pada waktu shalat, imsak, dan pengingat yang Anda nyalakan.</td></tr>
+  <tr><td>Layanan pemutar adzan (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>)</td><td>Memutar adzan sampai selesai atau sampai Anda mengetuk Stop, dengan notifikasi selama adzan berbunyi.</td></tr>
+  <tr><td>Wallpaper (<code>SET_WALLPAPER</code>)</td><td>Opsional. Memasang gambar ayat dan jadwal shalat di layar kunci bila Anda menyalakannya. Mematikannya mengembalikan layar kunci ke wallpaper beranda.</td></tr>
   <tr><td>Daftar aplikasi terpasang (kueri peluncur)</td><td>Menampilkan nama dan ikon aplikasi di HP Anda agar Anda dapat memilih mana yang diberi gerbang. Daftar ini tidak disimpan dan tidak dikirim.</td></tr>
-  <tr><td>Pemeriksaan harian (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Diperlukan oleh pustaka Android WorkManager untuk menjalankan cek kesehatan sekali sehari. <code>ACCESS_NETWORK_STATE</code> hanya membaca status jaringan dan tidak memberi akses internet.</td></tr>
+  <tr><td>Pemeriksaan harian (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Diperlukan oleh pustaka Android WorkManager untuk menjalankan cek kesehatan sekali sehari, dan untuk memasang ulang jadwal adzan setelah HP dinyalakan ulang. <code>ACCESS_NETWORK_STATE</code> hanya membaca status jaringan dan tidak memberi akses internet.</td></tr>
 </table>
 
 <h3>4. Berbagi</h3>
@@ -109,6 +114,7 @@
   <li>Learning progress: your reading position, Hijaiyah level, and number of completed readings (khatam).</li>
   <li>Local statistics: verses and cards read, gates completed, how often each exit was used, active days, Hijrah Garden, and streak.</li>
   <li>Translation-only mode: whether it is on and the end date you entered.</li>
+  <li>Worship: the location used for prayer times (the city you chose, or approximate GPS coordinates), adhan and reminder choices, the 5 daily prayers log, fasting status, tasbih counts, and your Quran reading bookmark.</li>
   <li>Today's gate log for the Help screen: the <em>number</em> of gates shown and skipped per reason (free time, not a proper place), the time of the last event, and when the service last connected. No app names; counts reset every day.</li>
 </ul>
 <p><strong>Data backup (optional):</strong> when you tap Settings › Save a backup, the data above (except the daily gate log) is copied to one JSON file in a place <em>you choose</em> through the Android file picker, for example Downloads or Google Drive. The app does not send that file anywhere; if you choose a cloud service, the file is subject to that service's policy. The file is only read back when you choose Restore from backup.</p>
@@ -130,9 +136,13 @@
   <tr><td>Usage access (<code>PACKAGE_USAGE_STATS</code>)</td><td>Backup method to know which app is open when the Accessibility Service is off. Only the package name of the foreground app is read, on your phone.</td></tr>
   <tr><td>Display over other apps (<code>SYSTEM_ALERT_WINDOW</code>)</td><td>Shows the verse screen on top of the app you selected when the backup method is used.</td></tr>
   <tr><td>Foreground service (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>)</td><td>Runs the backup method with a permanent "Ayah First is on" notification.</td></tr>
-  <tr><td>Notifications (<code>POST_NOTIFICATIONS</code>)</td><td>Tells you if Ayah First stops working, plus the service notification above.</td></tr>
+  <tr><td>Notifications (<code>POST_NOTIFICATIONS</code>)</td><td>Tells you if Ayah First stops working, the service notification above, adhan and prayer reminders, and the daily verse notification if you turn it on. All are created on your phone.</td></tr>
+  <tr><td>Approximate location (<code>ACCESS_COARSE_LOCATION</code>)</td><td>Optional. Calculates prayer times and the qibla direction from your approximate position, only while the app is in use (no background location). Calculated on your phone and never sent. You can pick a city manually instead.</td></tr>
+  <tr><td>Exact alarms (<code>SCHEDULE_EXACT_ALARM</code>)</td><td>Plays the adhan and reminders exactly at prayer time, imsak, and any reminder you turn on.</td></tr>
+  <tr><td>Adhan player service (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>)</td><td>Plays the adhan until it ends or you tap Stop, with a notification while it plays.</td></tr>
+  <tr><td>Wallpaper (<code>SET_WALLPAPER</code>)</td><td>Optional. Sets a verse and prayer-times image on the lock screen if you turn it on. Turning it off returns the lock screen to your home wallpaper.</td></tr>
   <tr><td>Installed apps (launcher query)</td><td>Shows the names and icons of apps on your phone so you can choose which ones to gate. The list is not stored or sent.</td></tr>
-  <tr><td>Daily check (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Required by the Android WorkManager library to run a once-a-day health check. <code>ACCESS_NETWORK_STATE</code> only reads network status and gives no internet access.</td></tr>
+  <tr><td>Daily check (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Required by the Android WorkManager library to run a once-a-day health check, and to re-schedule the adhan after the phone restarts. <code>ACCESS_NETWORK_STATE</code> only reads network status and gives no internet access.</td></tr>
 </table>
 
 <h3>4. Sharing</h3>
