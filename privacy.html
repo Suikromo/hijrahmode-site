@@ -12,7 +12,7 @@
 <header>
   <a class="brand" href="./">🌙 Ayat Dulu</a>
   <h1>Kebijakan Privasi<br>Privacy Policy</h1>
-  <p class="muted">Berlaku sejak / Effective: 21 November 2026 (November 21, 2026); versi pertama 29 Oktober 2026</p>
+  <p class="muted">Berlaku sejak / Effective: 28 November 2026 (November 28, 2026); versi pertama 29 Oktober 2026</p>
   <nav class="lang">
     <a href="#id">Bahasa Indonesia</a>
     <a href="#en">English</a>
@@ -29,7 +29,7 @@
 <strong>Ringkasnya</strong>
 <ul>
   <li>Kami <strong>tidak mengumpulkan, mengirim, menjual, atau membagikan</strong> data pribadi apa pun.</li>
-  <li>Tidak ada akun, iklan, analytics, maupun server. Aplikasi ini <strong>tidak memiliki izin akses internet</strong>.</li>
+  <li>Tidak ada akun, iklan, analytics, maupun server milik kami. Internet <strong>hanya</strong> dipakai saat Anda memutar atau mengunduh murottal (langsung dari server sumbernya) dan untuk pembaruan lewat Google Play.</li>
   <li>Semua yang dicatat aplikasi disimpan di HP Anda saja dan terhapus saat aplikasi dihapus.</li>
 </ul>
 </div>
@@ -42,6 +42,8 @@
   <li>Statistik lokal: jumlah ayat dan kartu yang dibaca, gerbang yang selesai, jumlah tiap jalan keluar yang dipakai, hari aktif, Taman Hijrah, dan streak.</li>
   <li>Mode terjemah saja: status aktif dan tanggal berakhir yang Anda isi sendiri.</li>
   <li>Ibadah: lokasi untuk jadwal shalat (nama kota yang Anda pilih, atau koordinat kasar dari GPS), pilihan suara adzan dan pengingat, catatan shalat 5 waktu, status puasa, hitungan tasbih, dan penanda bacaan Al-Qur'an.</li>
+  <li>Nama panggilan untuk sapaan di Beranda (Plus, opsional) dan PIN mode anak bila Anda membuatnya.</li>
+  <li>Murottal yang Anda unduh: file audio per surat, bisa dihapus kapan saja di Pengaturan.</li>
   <li>Catatan gerbang hari ini untuk layar Bantuan: <em>jumlah</em> gerbang yang tampil dan yang dilewati per alasan (waktu bebas, tempat tidak layak), jam kejadian terakhir, dan jam layanan terakhir tersambung. Tanpa nama aplikasi; hitungan direset setiap hari.</li>
 </ul>
 <p><strong>Cadangan data (opsional):</strong> bila Anda mengetuk Pengaturan › Simpan cadangan, data di atas (kecuali catatan gerbang harian) disalin ke satu file JSON di tempat yang <em>Anda pilih sendiri</em> lewat pemilih file Android, misalnya folder Download atau Google Drive. Aplikasi tidak mengirim file itu ke mana pun; bila Anda memilih layanan awan, file itu tunduk pada kebijakan layanan tersebut. File hanya dibaca kembali saat Anda memilih Pulihkan dari cadangan.</p>
@@ -69,7 +71,8 @@
   <tr><td>Layanan pemutar adzan (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>)</td><td>Memutar adzan sampai selesai atau sampai Anda mengetuk Stop, dengan notifikasi selama adzan berbunyi.</td></tr>
   <tr><td>Wallpaper (<code>SET_WALLPAPER</code>)</td><td>Opsional. Memasang gambar ayat dan jadwal shalat di layar kunci bila Anda menyalakannya. Mematikannya mengembalikan layar kunci ke wallpaper beranda.</td></tr>
   <tr><td>Daftar aplikasi terpasang (kueri peluncur)</td><td>Menampilkan nama dan ikon aplikasi di HP Anda agar Anda dapat memilih mana yang diberi gerbang. Daftar ini tidak disimpan dan tidak dikirim.</td></tr>
-  <tr><td>Pemeriksaan harian (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Diperlukan oleh pustaka Android WorkManager untuk menjalankan cek kesehatan sekali sehari, dan untuk memasang ulang jadwal adzan setelah HP dinyalakan ulang. <code>ACCESS_NETWORK_STATE</code> hanya membaca status jaringan dan tidak memberi akses internet.</td></tr>
+  <tr><td>Pemeriksaan harian (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>)</td><td>Diperlukan oleh pustaka Android WorkManager untuk menjalankan cek kesehatan sekali sehari, dan untuk memasang ulang jadwal adzan setelah HP dinyalakan ulang.</td></tr>
+  <tr><td>Internet (<code>INTERNET</code>) dan status jaringan (<code>ACCESS_NETWORK_STATE</code>)</td><td>Hanya untuk memutar atau mengunduh murottal yang Anda pilih, langsung dari server sumbernya. Status jaringan dipakai untuk menyarankan Wi-Fi sebelum unduhan besar. Tidak ada data pribadi yang dikirim.</td></tr>
 </table>
 
 <h3>4. Berbagi</h3>
@@ -77,13 +80,15 @@
 <p>Tombol "Laporkan masalah" di layar Bantuan menyiapkan pesan berisi merek dan tipe HP, versi Android, versi aplikasi, status izin, dan catatan gerbang hari ini. Pesan itu juga hanya terkirim bila Anda sendiri memilih tujuannya (misalnya email atau WhatsApp) dan mengirimnya.</p>
 
 <h3>5. Pihak ketiga</h3>
-<p>Ayat Dulu tidak memuat SDK iklan, analytics, pelacak, atau layanan pihak ketiga yang mengirim data. Teks Al-Qur'an bersumber dari Tanzil Project (tanzil.net) dan disertakan di dalam aplikasi, tanpa diunduh saat dipakai.</p>
+<p>Ayat Dulu tidak memuat SDK iklan, analytics, atau pelacak. Teks Al-Qur'an (Tanzil Project), terjemah dan transliterasi (Kementerian Agama RI melalui equran.id; Saheeh International), serta data tajwid (cpfair/quran-tajweed) disertakan di dalam aplikasi.</p>
+<p><strong>Murottal:</strong> saat Anda memutar atau mengunduh murottal, HP Anda mengambil file audio langsung dari server equran.id (cdn.equran.id) atau everyayah.com. Seperti setiap permintaan internet, server tersebut menerima alamat IP dan nama file yang diminta, sesuai kebijakan masing-masing. Ayat Dulu tidak mengirim data pribadi, pengaturan, atau statistik Anda ke server tersebut.</p>
+<p><strong>Google Play:</strong> pemeriksaan dan pemasangan pembaruan aplikasi memakai layanan Google Play di HP Anda, sesuai kebijakan privasi Google.</p>
 
 <h3>6. Anak-anak</h3>
 <p>Ayat Dulu tidak ditujukan untuk anak di bawah 13 tahun dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.</p>
 
 <h3>7. Keamanan</h3>
-<p>Karena data tidak pernah meninggalkan HP Anda, keamanannya mengikuti perlindungan HP Anda sendiri (kunci layar dan enkripsi bawaan Android).</p>
+<p>Karena data Anda tidak pernah meninggalkan HP, keamanannya mengikuti perlindungan HP Anda sendiri (kunci layar dan enkripsi bawaan Android). Murottal diambil lewat koneksi terenkripsi (HTTPS).</p>
 
 <h3>8. Perubahan kebijakan</h3>
 <p>Bila fitur baru mengubah cara data diperlakukan (misalnya fitur yang memerlukan internet), kebijakan ini akan diperbarui terlebih dahulu dan tanggal berlakunya diubah. Perubahan penting juga diberitahukan di dalam aplikasi.</p>
@@ -102,7 +107,7 @@
 <strong>In short</strong>
 <ul>
   <li>We <strong>do not collect, transmit, sell, or share</strong> any personal data.</li>
-  <li>No accounts, ads, analytics, or servers. The app <strong>does not have the internet permission</strong>.</li>
+  <li>No accounts, ads, analytics, or servers of our own. The internet is used <strong>only</strong> when you play or download a recitation (straight from its source server) and for updates through Google Play.</li>
   <li>Everything the app records stays on your phone and is deleted when you uninstall the app.</li>
 </ul>
 </div>
@@ -115,6 +120,8 @@
   <li>Local statistics: verses and cards read, gates completed, how often each exit was used, active days, Hijrah Garden, and streak.</li>
   <li>Translation-only mode: whether it is on and the end date you entered.</li>
   <li>Worship: the location used for prayer times (the city you chose, or approximate GPS coordinates), adhan and reminder choices, the 5 daily prayers log, fasting status, tasbih counts, and your Quran reading bookmark.</li>
+  <li>A nickname for the greeting on Home (Plus, optional) and the kid-mode PIN if you create one.</li>
+  <li>Recitations you download: audio files per surah, which you can delete at any time in Settings.</li>
   <li>Today's gate log for the Help screen: the <em>number</em> of gates shown and skipped per reason (free time, not a proper place), the time of the last event, and when the service last connected. No app names; counts reset every day.</li>
 </ul>
 <p><strong>Data backup (optional):</strong> when you tap Settings › Save a backup, the data above (except the daily gate log) is copied to one JSON file in a place <em>you choose</em> through the Android file picker, for example Downloads or Google Drive. The app does not send that file anywhere; if you choose a cloud service, the file is subject to that service's policy. The file is only read back when you choose Restore from backup.</p>
@@ -142,7 +149,8 @@
   <tr><td>Adhan player service (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>)</td><td>Plays the adhan until it ends or you tap Stop, with a notification while it plays.</td></tr>
   <tr><td>Wallpaper (<code>SET_WALLPAPER</code>)</td><td>Optional. Sets a verse and prayer-times image on the lock screen if you turn it on. Turning it off returns the lock screen to your home wallpaper.</td></tr>
   <tr><td>Installed apps (launcher query)</td><td>Shows the names and icons of apps on your phone so you can choose which ones to gate. The list is not stored or sent.</td></tr>
-  <tr><td>Daily check (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>ACCESS_NETWORK_STATE</code>)</td><td>Required by the Android WorkManager library to run a once-a-day health check, and to re-schedule the adhan after the phone restarts. <code>ACCESS_NETWORK_STATE</code> only reads network status and gives no internet access.</td></tr>
+  <tr><td>Daily check (WorkManager: <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>)</td><td>Required by the Android WorkManager library to run a once-a-day health check, and to re-schedule the adhan after the phone restarts.</td></tr>
+  <tr><td>Internet (<code>INTERNET</code>) and network state (<code>ACCESS_NETWORK_STATE</code>)</td><td>Only to play or download the recitations you choose, straight from their source servers. Network state is used to recommend Wi-Fi before a large download. No personal data is sent.</td></tr>
 </table>
 
 <h3>4. Sharing</h3>
@@ -150,13 +158,15 @@
 <p>"Report a problem" on the Help screen prepares a message with your phone brand and model, Android version, app version, permission status and today's gate log. It is also sent only if you choose a destination (for example email or WhatsApp) and send it yourself.</p>
 
 <h3>5. Third parties</h3>
-<p>Ayat Dulu contains no advertising, analytics, tracking, or other third-party SDKs that transmit data. The Quran text comes from the Tanzil Project (tanzil.net) and is bundled inside the app, not downloaded during use.</p>
+<p>Ayat Dulu contains no advertising, analytics or tracking SDKs. The Quran text (Tanzil Project), translations and transliteration (Indonesian Ministry of Religious Affairs via equran.id; Saheeh International) and tajweed data (cpfair/quran-tajweed) are bundled inside the app.</p>
+<p><strong>Recitations:</strong> when you play or download a recitation, your phone fetches the audio file directly from equran.id (cdn.equran.id) or everyayah.com. As with any internet request, that server receives your IP address and the name of the file requested, under its own policy. Ayat Dulu sends none of your personal data, settings or statistics to these servers.</p>
+<p><strong>Google Play:</strong> checking for and installing app updates uses Google Play services on your phone, under Google's privacy policy.</p>
 
 <h3>6. Children</h3>
 <p>Ayat Dulu is not directed to children under 13 and collects no data from anyone, including children.</p>
 
 <h3>7. Security</h3>
-<p>Because data never leaves your phone, it is protected by your phone's own security (screen lock and Android's built-in encryption).</p>
+<p>Because your data never leaves your phone, it is protected by your phone's own security (screen lock and Android's built-in encryption). Recitations are fetched over an encrypted (HTTPS) connection.</p>
 
 <h3>8. Changes</h3>
 <p>If a new feature changes how data is handled (for example a feature that needs the internet), this policy will be updated first and the effective date changed. Important changes will also be announced in the app.</p>
